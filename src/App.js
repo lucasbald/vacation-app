@@ -1,22 +1,19 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
-import SignIn from "./components/signInButton/SignInButton";
+import Homepage from "./components/homepage/Home";
+import Dashboard from "./components/dashboard/Dashboard";
+import ErrorPage from "./components/errorPage/ErrorPage";
 
 const App = () => {
   return (
     <div className="App">
-      <Header />
-
-      <main>
-        <h1>Welcome to My Simple Vacation App Website</h1>
-        <p>SignIn to check your vacation!</p>
-        <SignIn />
-      </main>
-
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
     </div>
   );
 };
