@@ -1,19 +1,21 @@
 import React from "react";
 import "./App.css";
-import logo from "./logo.svg";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import SignIn from "./components/signInButton/SignInButton";
 
 const App = () => {
   return (
     <div className="App">
       <Header />
+
       <main>
-        <h1>Welcome to My Simple React Website</h1>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Feel free to modify this!</p>
+        <h1>Welcome to My Simple Vacation App Website</h1>
+        <p>SignIn to check your vacation!</p>
+        <SignIn />
       </main>
+
       <Footer />
     </div>
   );
