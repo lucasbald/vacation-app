@@ -6,6 +6,7 @@ import "./Dashboard.css"
 import { logout } from "../../utils/firebase";
 import { getFromLocalStorage, removeFromLocalStorage } from "../../utils/localStorage";
 
+import VacationTimeline from "../vacationTimeline/VacationTimeline";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -37,6 +38,9 @@ const Dashboard = () => {
       Logged in as
       <div>{userData.displayName}</div>
       <div>{userData.email}</div>
+
+      <VacationTimeline />
+
       <button className="logout__btn" onClick={logoutUser}>Logout</button>
     </header>
   );
