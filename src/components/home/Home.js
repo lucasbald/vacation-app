@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 import "./Home.css"
 
-import SignIn from "../signInButton/SignInButton";
 import { getFromLocalStorage } from "../../utils/localStorage";
+
+import SignIn from "../signInButton/SignInButton";
 
 const Homepage = () => {
   const navigate = useNavigate()
