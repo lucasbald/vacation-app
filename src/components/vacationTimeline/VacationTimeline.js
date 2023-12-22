@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Timeline from "react-calendar-timeline";
 import "react-calendar-timeline/lib/Timeline.css";
 
+import "./VacationTimeline.css";
+
 const VacationTimeline = () => {
   const [people, setPeople] = useState([
     { id: 1, name: "John" },
@@ -117,7 +119,7 @@ const VacationTimeline = () => {
     <div>
       <br></br>
 
-      <div>
+      <div className="vacation-timeline-container ">
         <label>
           Name:
           <input
