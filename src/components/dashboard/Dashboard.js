@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import "./Dashboard.css"
+import "./Dashboard.css";
 
 import { logout } from "../../utils/firebase";
-import { getFromLocalStorage, removeFromLocalStorage } from "../../utils/localStorage";
+import {
+  getFromLocalStorage,
+  removeFromLocalStorage,
+} from "../../utils/localStorage";
 
 import VacationTimeline from "../vacationTimeline/VacationTimeline";
 
@@ -13,7 +16,7 @@ const Dashboard = () => {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    const userResponse = getFromLocalStorage({ key: "user"});
+    const userResponse = getFromLocalStorage({ key: "user" });
 
     if (!userResponse) {
       navigate("/");
@@ -28,20 +31,19 @@ const Dashboard = () => {
 
   const logoutUser = () => {
     logout();
-    removeFromLocalStorage({key: "user"});
+    removeFromLocalStorage({ key: "user" });
     navigate("/");
   };
 
   return (
     <header className="dashboard-container">
-      <h1>Dashboard</h1>
-      Logged in as
-      <div>{userData.displayName}</div>
-      <div>{userData.email}</div>
+      <p>Hello, {userData.displayName}</p>
 
       <VacationTimeline />
 
-      <button className="logout__btn" onClick={logoutUser}>Logout</button>
+      <button className="logout__btn" onClick={logoutUser}>
+        Logout
+      </button>
     </header>
   );
 };

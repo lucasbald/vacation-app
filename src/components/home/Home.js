@@ -21,7 +21,7 @@ const Homepage = () => {
 
   return (
     <div>
-      <h1>Welcome to My Simple Vacation App Website</h1>
+      <h2>Welcome to My Simple Vacation App Website</h2>
       <p>SignIn to check your vacation!</p>
       <SignIn />
     </div>
